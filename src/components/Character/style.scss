@@ -1,0 +1,37 @@
+.darkMode{
+  background:black;
+  height: 100vh;
+  button{
+    background: #000;
+    border: 1px solid #fff;
+    color:#fff;
+    border-radius: 10px;
+  }
+  ul li {
+    color:#fff;
+  }
+  .label, .button{
+    background-color: black;
+    color:#fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+}
+#character{
+  padding:2em;
+  &-image{
+    height: 100vh;
+  }
+  &-description{
+    span{
+      font-weight: bold;
+    }
+  }
+  &-wrap{
+    display: flex;
+    flex-direction: column;
+    #themeMode{
+      align-self: flex-end;
+    }
+  }
+}
