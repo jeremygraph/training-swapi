@@ -2,9 +2,16 @@
  * Initial State
  */
 const initialState = {
-  inputCharacter: null,
+  inputCharacter: '',
   name: '',
   darkTheme: false,
+  height: '',
+  mass: '',
+  hair_color: '',
+  skin_color: '',
+  eye_color: '',
+  gender: '',
+
 };
 
 /**
@@ -26,35 +33,34 @@ const LIGHT_MODE = 'LIGHT_MODE';
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case CHARACTER_CHANGE:
-    console.log('handleChange');
+    // console.log('handleChange');
       return {
         ...state,
         ...action.modif,
       };
-      case CHARACTER_SUBMIT:
-      console.log('handlesubmit');
-        return {
-          ...state,
-        };
-        case CHARACTER_RECEIVE:
-         console.log('receive data');
-         return {
-           ...state,
-           ...action.data,
-           inputCharacter: '',
-         };
-         case DARK_MODE:
-         console.log('darkmode');
-           return {
-             ...state,
-             darkTheme: true,
-           };
-           case LIGHT_MODE:
-           console.log('darkmode');
-             return {
-               ...state,
-               darkTheme: false,
-             };
+    case CHARACTER_SUBMIT:
+    // console.log('handlesubmit');
+      return {
+        ...state,
+      };
+    case CHARACTER_RECEIVE:
+      // console.log('receive data');
+      return {
+        ...state,
+        ...action.data,
+      };
+    case DARK_MODE:
+    // console.log('darkmode');
+      return {
+        ...state,
+        darkTheme: true,
+      };
+    case LIGHT_MODE:
+    // console.log('darkmode');
+      return {
+        ...state,
+        darkTheme: false,
+      };
     default:
       return state;
   }
